@@ -1,0 +1,19 @@
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-cod-grey: #1a1a1a;
+$color-pampas: #f7f0d8;
+
+$font-bigilla: "Bigilla";
+$font-supreme: "Supreme";
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+$z-indexes: (
+  "noscript",
+  "preloader",
+  "navigation",
+  "noise",
+  "content",
+  "canvas"
+);

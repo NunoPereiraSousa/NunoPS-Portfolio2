@@ -1,0 +1,51 @@
+extends ../base.pug
+
+block variables
+  - var template = "home"
+
+block content
+  .home
+    .home__wrapper
+      .home__intro 
+        h1.home__title(data-animation="paragraph")!=home.data.header.replace(/\n/g, "<br>")
+
+        .home__actions 
+          p.home__label(data-animation="paragraph")=home.data.text
+          
+          button.home__link(data-animation="paragraph")=home.data.button
+
+      each section in home.data.body
+        if section.slice_type === "myself"
+          section.home__myself
+            .home__myself__wrapper
+              p.home__myself__label(data-animation="paragraph")=section.primary.quote
+
+              h2.home__myself__title(data-animation="title")=section.primary.title
+
+              .home__myself__box
+                .home__myself__description(data-animation="paragraph")!=section.primary.description.replace(/\n/g, "<br>")
+                .home__myself__description(data-animation="paragraph")!=section.primary.description2.replace(/\n/g, "<br>")
+
+        if section.slice_type === "categories"
+          section.home__categories 
+            .home__categories__wrapper
+              ul.home__categories__list
+                each category in section.items
+                  li.home__categories__list__item
+                    span.home__categories__stroke(data-animation="line")
+                    h2.home__categories__title(data-animation="title")=category.category_title
+
+        if section.slice_type === "works"
+          section.home__works 
+            .home__works__wrapper
+              p.home__works__label(data-animation="paragraph")=section.primary.label
+
+              h2.home__works__title(data-animation="title")=section.primary.title
+
+              ul.home__works__list
+                each work in section.items
+                  li.home__works__list__item 
+                    a.home__works__list__link(href=work.link.url target="_blank")
+                      span=work.label
+
+    include ../partials/footer

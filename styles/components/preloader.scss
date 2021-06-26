@@ -1,0 +1,73 @@
+.preloader {
+  @extend %cover;
+  @extend %center;
+
+  background: $color-pampas;
+  color: $color-cod-grey;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  transform-origin: 0 0;
+  z-index: z("preloader");
+
+  &--loaded {
+    transform: scaleY(0);
+  }
+
+  // display: none;
+}
+
+.preloader__name {
+  @extend %title-200;
+
+  text-align: center;
+  max-width: 117.2rem;
+  margin-top: -10vh;
+
+  @include media("<phone") {
+    width: 22.2rem;
+    margin-top: 0;
+  }
+}
+
+.preloader__box {
+  align-items: center;
+  bottom: 6.4rem;
+  display: flex;
+  justify-content: space-around;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.preloader__graphics__box {
+}
+
+.stars {
+  animation: spin 4s linear infinite;
+  fill: $color-cod-grey;
+  height: 1.8rem;
+  width: 1.8rem;
+
+  @include media("<=tablet") {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  @include media("<phone") {
+    height: 1.05rem;
+    width: 1.05rem;
+  }
+}
+
+.preloader__title {
+  @extend %description-18;
+}
+
+.preloader__graphics__box {
+}
+
+.stars {
+}

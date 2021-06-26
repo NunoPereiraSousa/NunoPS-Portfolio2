@@ -1,0 +1,27 @@
+%title-20 {
+  font-size: 2rem;
+}
+
+%title-70 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 7rem;
+
+  @include media("<=tablet") {
+    font-size: 12rem;
+  }
+
+  @include media(">desktop") {
+    font-size: 20rem;
+  }
+}
+
+%title-200 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 20rem;
+
+  @include media("<phone") {
+    font-size: 7rem;
+  }
+}
