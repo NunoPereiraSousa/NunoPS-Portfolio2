@@ -1,6 +1,9 @@
 block content
   footer.footer
     .footer__wrapper 
+      
+      p.footer__label(data-animation="paragraph")=footer.data.label
+
       .footer__box
         each social in footer.data.socials
           if social.text === "Email"

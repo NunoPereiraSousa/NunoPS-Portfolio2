@@ -72,12 +72,6 @@ app.get("/about", async (req, res) => {
   const about = await api.getSingle("about");
   const defaults = await handleRequest(api);
 
-  console.log(about.data);
-
-  about.data.body.forEach(el => {
-    console.log(el.primary);
-  });
-
   res.render("pages/about", {
     about,
     ...defaults

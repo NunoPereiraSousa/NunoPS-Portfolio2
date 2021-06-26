@@ -1,0 +1,58 @@
+.home__works {
+}
+
+.home__works__wrapper {
+}
+
+.home__works__label {
+  margin-bottom: 50.2rem;
+  text-align: center;
+}
+
+.home__works__title {
+  @extend %title-300;
+
+  margin-bottom: 26.6rem;
+}
+
+.home__works__list {
+}
+
+.home__works__list__item {
+}
+
+.home__works__list__link {
+  @extend %title-200;
+
+  span {
+    display: inline-block;
+  }
+}
+
+.home__works__list__item:nth-child(1) span {
+  transform: translateX(34vw);
+}
+
+.home__works__list__item:nth-child(2) span {
+  transform: translateX(20vw);
+}
+
+.home__works__list__item:nth-child(3) span {
+  transform: translateX(40vw);
+}
+
+.home__works__list__item:nth-child(4) span {
+  transform: translateX(13vw);
+}
+
+.home__works__list__item:nth-child(5) span {
+  transform: translateX(38vw);
+}
+
+.home__works__list__item:nth-child(6) span {
+  transform: translateX(20vw);
+}
+
+.home__works__list__item:nth-child(7) span {
+  transform: translateX(43vw);
+}

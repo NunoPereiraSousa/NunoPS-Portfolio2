@@ -8,6 +8,22 @@ html {
   // position: fixed;
   // overflow: hidden;
 
+  @include media("<=1728px") {
+    font-size: 9px;
+  }
+
+  @include media("<=1536px") {
+    font-size: 8px;
+  }
+
+  @include media("<=1344px") {
+    font-size: 7px;
+  }
+
+  @include media("<=1152px") {
+    font-size: 6px;
+  }
+
   @include media("<768px") {
     font-size: 10px;
   }
@@ -19,7 +35,8 @@ body {
 
   /* Add background-color, color and font-family */
   background-color: $color-cod-grey;
-  color: $color-white;
+  color: $color-pampas;
+  font-family: $font-supreme;
   text-transform: uppercase;
 
   // position: fixed;

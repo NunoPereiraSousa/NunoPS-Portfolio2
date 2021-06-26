@@ -1,0 +1,40 @@
+.home__categories__wrapper {
+}
+
+.home__categories__list {
+  margin: 50.2rem 0;
+}
+
+.home__categories__list__item {
+  padding: 7.6rem 0;
+  position: relative;
+
+  &:nth-child(1) h2 {
+    transform: translateX(33.4rem);
+  }
+
+  &:nth-child(2) h2 {
+    transform: translateX(83.9rem);
+  }
+
+  &:nth-child(3) h2 {
+    transform: translateX(26.7rem);
+  }
+}
+
+.home__categories__stroke {
+  border-top: 1px solid rgba($color: $color-pampas, $alpha: 0.2);
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: left;
+  width: 100%;
+}
+
+.home__categories__title {
+  @extend %title-200;
+
+  font-weight: 400;
+  width: fit-content;
+}

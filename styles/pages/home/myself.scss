@@ -1,0 +1,30 @@
+.home__myself {
+}
+
+.home__myself__wrapper {
+}
+
+.home__myself__label {
+  margin: 50.2rem 0;
+  text-align: center;
+}
+
+.home__myself__title {
+  @extend %title-300;
+
+  margin-bottom: 26.6rem;
+}
+
+.home__myself__box {
+}
+
+.home__myself__description {
+  margin: auto;
+  max-width: 51.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.0375rem;
+
+  &:last-child {
+    margin-top: 2.4rem;
+  }
+}

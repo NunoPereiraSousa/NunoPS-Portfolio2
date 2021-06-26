@@ -2,9 +2,20 @@
   @extend %cover;
 
   pointer-events: none;
+  position: fixed;
   z-index: z("navigation");
 }
 
 .navigation__link {
   pointer-events: auto;
+  position: absolute;
+  top: 4rem;
+
+  &:first-child {
+    left: 4rem;
+  }
+
+  &:last-child {
+    right: 4rem;
+  }
 }

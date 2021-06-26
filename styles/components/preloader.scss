@@ -15,7 +15,8 @@
     transform: scaleY(0);
   }
 
-  // display: none;
+  // REMOVE THIS FOR PRODUCTION
+  display: none;
 }
 
 .preloader__name {
