@@ -1,37 +1,25 @@
 html {
   // @extend %cover;
-  // font-size: calc(100vw / 1920 * 10);
+  font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-size: 10px;
+  // font-size: 10px;
+
+  @include media("<=tablet") {
+    font-size: 10px;
+  }
 
   // position: fixed;
   // overflow: hidden;
-
-  @include media("<=1728px") {
-    font-size: 9px;
-  }
-
-  @include media("<=1536px") {
-    font-size: 8px;
-  }
-
-  @include media("<=1344px") {
-    font-size: 7px;
-  }
-
-  @include media("<=1152px") {
-    font-size: 6px;
-  }
-
-  @include media("<768px") {
-    font-size: 10px;
-  }
 }
 
 body {
   // @extend %cover;
   @extend %description-15;
+
+  @include media("<=desktop") {
+    font-size: 15px;
+  }
 
   /* Add background-color, color and font-family */
   background-color: $color-cod-grey;

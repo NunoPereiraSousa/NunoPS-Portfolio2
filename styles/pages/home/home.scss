@@ -12,6 +12,14 @@
   @extend %title-370;
 
   max-width: 181.7rem;
+
+  @include media("<=tablet") {
+    width: 68rem;
+  }
+
+  @include media("<phone") {
+    width: 32.6rem;
+  }
 }
 
 .home__actions {
@@ -21,6 +29,10 @@
   bottom: 4rem;
   position: absolute;
   right: 4rem;
+
+  @include media("<phone") {
+    right: 2rem;
+  }
 }
 
 .home__link {
@@ -29,4 +41,8 @@
   left: 4rem;
   position: absolute;
   text-transform: uppercase;
+
+  @include media("<phone") {
+    left: 2rem;
+  }
 }

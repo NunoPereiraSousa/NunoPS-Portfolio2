@@ -7,12 +7,28 @@
 .home__myself__label {
   margin: 50.2rem 0;
   text-align: center;
+
+  @include media("<=tablet") {
+    margin: 34rem 0;
+  }
+
+  @include media("<phone") {
+    margin: 20rem 0;
+  }
 }
 
 .home__myself__title {
   @extend %title-300;
 
   margin-bottom: 26.6rem;
+
+  @include media("<=tablet") {
+    margin-bottom: 16rem;
+  }
+
+  @include media("<phone") {
+    margin-bottom: 10.8rem;
+  }
 }
 
 .home__myself__box {
@@ -26,5 +42,10 @@
 
   &:last-child {
     margin-top: 2.4rem;
+  }
+
+  @include media("<phone") {
+    margin-left: 2rem;
+    width: 35rem;
   }
 }

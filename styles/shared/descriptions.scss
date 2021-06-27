@@ -19,7 +19,30 @@
   }
 }
 
+%description-40 {
+  font-family: $font-bigilla;
+  font-size: 4rem;
+
+  @include media("<=tablet") {
+    font-size: 2.4rem;
+    font-weight: 400;
+  }
+
+  @include media("<phone") {
+    font-family: $font-supreme;
+    font-size: 1.5rem;
+  }
+}
+
 %description-150 {
   font-family: $font-bigilla;
   font-size: 15rem;
+
+  @include media("<=tablet") {
+    font-size: 8rem;
+  }
+
+  @include media("<phone") {
+    font-size: 4rem;
+  }
 }

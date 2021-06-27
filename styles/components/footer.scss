@@ -1,7 +1,7 @@
 .footer {
   margin-top: 30rem;
 
-  @include media("<tablet") {
+  @include media("<=tablet") {
     margin-top: 18.8888rem;
   }
 
@@ -16,6 +16,14 @@
 .footer__label {
   margin: 50.2rem 0;
   text-align: center;
+
+  @include media("<=tablet") {
+    margin: 34rem 0;
+  }
+
+  @include media("<phone") {
+    margin: 20rem 0;
+  }
 }
 
 .footer__box {
