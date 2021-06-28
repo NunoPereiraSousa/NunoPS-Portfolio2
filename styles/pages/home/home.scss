@@ -3,6 +3,7 @@
 }
 
 .home__intro {
+  position: relative;
   @extend %center;
 
   height: 100vh;

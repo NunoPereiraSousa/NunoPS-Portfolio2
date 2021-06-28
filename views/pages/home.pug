@@ -44,8 +44,8 @@ block content
 
               ul.home__works__list
                 each work in section.items
-                  li.home__works__list__item 
+                  li.home__works__list__item
                     a.home__works__list__link(href=work.link.url target="_blank")
-                      span=work.label
+                      span.home__works__link__text(data-animation="title")=work.label
 
-    include ../partials/footer
+      include ../partials/footer

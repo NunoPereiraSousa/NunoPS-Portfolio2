@@ -1,5 +1,5 @@
 html {
-  // @extend %cover;
+  @extend %cover;
   font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -9,12 +9,12 @@ html {
     font-size: 10px;
   }
 
-  // position: fixed;
-  // overflow: hidden;
+  position: fixed;
+  overflow: hidden;
 }
 
 body {
-  // @extend %cover;
+  @extend %cover;
   @extend %description-15;
 
   @include media("<=desktop") {
@@ -27,14 +27,15 @@ body {
   font-family: $font-supreme;
   text-transform: uppercase;
 
-  // position: fixed;
+  position: fixed;
 }
 
 .content {
-  // @extend %cover;
+  @extend %cover;
 }
 
-[data-animation="paragraph"] {
+[data-animation="paragraph"],
+[data-animation="title"] {
   span {
     display: inline-block;
     overflow: hidden;
