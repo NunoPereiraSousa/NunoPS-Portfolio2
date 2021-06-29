@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const errorHandler = require("errorhandler");
 const app = express();
 const path = require("path");
@@ -13,6 +14,7 @@ const Prismic = require("@prismicio/client");
 const PrismicDOM = require("prismic-dom");
 const { query } = require("express");
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(errorHandler());
 app.use(bodyParser.json());

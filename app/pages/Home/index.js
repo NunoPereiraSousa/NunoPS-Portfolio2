@@ -1,5 +1,6 @@
 import Page from "classes/Page";
 import Button from "classes/Button";
+import GSAP from "gsap";
 
 export default class Home extends Page {
   constructor() {
@@ -14,6 +15,8 @@ export default class Home extends Page {
         button: ".home__link"
       }
     });
+
+    console.log(this.titles);
   }
 
   create() {
@@ -21,6 +24,61 @@ export default class Home extends Page {
 
     this.link = new Button({
       element: this.elements.button
+    });
+
+    // this.title = new Slider();
+
+    this.myselfCarousel();
+    this.worksCarousel();
+  }
+
+  myselfCarousel() {
+    let spans = document.querySelectorAll(".spans");
+
+    let containerWidth = document
+      .querySelector(".home__myself__title")
+      .getBoundingClientRect().width;
+
+    let titleWidth = spans[0].getBoundingClientRect().width;
+
+    let initial_offset = ((2 * titleWidth) / containerWidth) * 100 * -1;
+
+    GSAP.set(".home__myself__title", {
+      xPercent: `${initial_offset}`
+    });
+
+    this.animate = GSAP.timeline();
+
+    this.animate.to(".home__myself__title", {
+      xPercent: 0,
+      duration: 8,
+      repeat: -1,
+      ease: "none"
+    });
+  }
+
+  worksCarousel() {
+    let spans = document.querySelectorAll(".spans");
+
+    let containerWidth = document
+      .querySelector(".home__works__title")
+      .getBoundingClientRect().width;
+
+    let titleWidth = spans[0].getBoundingClientRect().width;
+
+    let initial_offset = ((2 * titleWidth) / containerWidth) * 100 * -1;
+
+    GSAP.set(".home__works__title", {
+      xPercent: `${initial_offset}`
+    });
+
+    this.animate = GSAP.timeline();
+
+    this.animate.to(".home__works__title", {
+      xPercent: 0,
+      duration: 8,
+      repeat: -1,
+      ease: "none"
     });
   }
 }

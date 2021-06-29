@@ -16,11 +16,13 @@ export default class Preloader extends Component {
     });
 
     split({
-      element: this.elements.title
+      element: this.elements.title,
+      append: true
     });
 
     split({
-      element: this.elements.title
+      element: this.elements.title,
+      append: true
     });
 
     console.log(this.elements.title);
@@ -61,11 +63,11 @@ export default class Preloader extends Component {
   onCounterLoaded() {
     let percent = this.length;
 
-    this.beforeLoaded();
+    // this.beforeLoaded();
 
     setTimeout(() => {
       this.onLoaded();
-    }, 3000);
+    }, 5000);
   }
 
   /**
@@ -74,22 +76,13 @@ export default class Preloader extends Component {
    */
   onLoaded() {
     return new Promise(resolve => {
-      this.animateOut = GSAP.timeline({
-        delay: 1
-      });
+      this.animateOut = GSAP.timeline();
 
       this.animateOut.to(this.elements.titleSpans, {
         y: "100%",
-        duration: 2,
-        stagger: 0.18,
-        ease: "expo.out"
-      });
-
-      this.animateOut.to(this.elements.label, {
-        y: "100%",
-        duration: 2,
-        stagger: 0.18,
-        ease: "expo.out"
+        duration: 1,
+        stagger: 0.12,
+        ease: "expo.in"
       });
 
       each(this.elements.graphics, svg => {
@@ -102,17 +95,28 @@ export default class Preloader extends Component {
             stagger: 0.05,
             ease: "expo.out"
           },
-          "-=1.5"
+          "-=0.75"
         );
       });
 
-      this.animateOut.to(this.element, {
-        scaleY: 0,
-        transformOrigin: "0% 0%",
-        ease: "expo.out",
-        duration: 1.5,
-        delay: 1
+      this.animateOut.to(this.elements.label, {
+        autoAlpha: 0,
+        filter: "blur(10px)",
+        duration: 0.8,
+        ease: "expo.out"
       });
+
+      this.animateOut.to(
+        this.element,
+        {
+          scaleY: 0,
+          transformOrigin: "0% 0%",
+          ease: "expo.out",
+          duration: 1.5,
+          delay: 1
+        },
+        "-=0.9"
+      );
 
       this.animateOut.call(_ => {
         this.emit("completed");

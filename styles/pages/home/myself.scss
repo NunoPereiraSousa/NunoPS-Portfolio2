@@ -18,9 +18,15 @@
 }
 
 .home__myself__title {
-  @extend %title-300;
-
+  @extend %title-200;
+  display: inline-block;
   margin-bottom: 26.6rem;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   @include media("<=tablet") {
     margin-bottom: 16rem;

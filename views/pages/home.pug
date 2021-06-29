@@ -7,24 +7,29 @@ block content
   .home
     .home__wrapper
       .home__intro 
-        h1.home__title(data-animation="paragraph")!=home.data.header.replace(/\n/g, "<br>")
+        h1.home__title!=home.data.header.replace(/\n/g, "<br>")
 
         .home__actions 
-          p.home__label(data-animation="paragraph")=home.data.text
+          p.home__label=home.data.text
           
-          button.home__link(data-animation="paragraph")=home.data.button
+          button.home__link=home.data.button
 
       each section in home.data.body
         if section.slice_type === "myself"
           section.home__myself
             .home__myself__wrapper
-              p.home__myself__label(data-animation="paragraph")=section.primary.quote
+              p.home__myself__label=section.primary.quote
 
-              h2.home__myself__title(data-animation="title")=section.primary.title
+              h2.home__myself__title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
 
               .home__myself__box
-                .home__myself__description(data-animation="paragraph")!=section.primary.description.replace(/\n/g, "<br>")
-                .home__myself__description(data-animation="paragraph")!=section.primary.description2.replace(/\n/g, "<br>")
+                .home__myself__description!=section.primary.description.replace(/\n/g, "<br>")
+                .home__myself__description!=section.primary.description2.replace(/\n/g, "<br>")
 
         if section.slice_type === "categories"
           section.home__categories 
@@ -38,14 +43,19 @@ block content
         if section.slice_type === "works"
           section.home__works 
             .home__works__wrapper
-              p.home__works__label(data-animation="paragraph")=section.primary.label
+              p.home__works__label=section.primary.label
 
-              h2.home__works__title(data-animation="title")=section.primary.title
+              h2.home__works__title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
+                span.spans=section.primary.title
 
               ul.home__works__list
                 each work in section.items
                   li.home__works__list__item
                     a.home__works__list__link(href=work.link.url target="_blank")
-                      span.home__works__link__text(data-animation="title")=work.label
+                      span.home__works__link__text=work.label
 
       include ../partials/footer

@@ -13,8 +13,6 @@ export default class Paragraph extends Animation {
   animateIn() {
     this.timelineIn = GSAP.timeline();
 
-    console.log(this.element, this.elements);
-
     this.timelineIn.fromTo(
       this.element,
       {

@@ -21,7 +21,8 @@ export default class Page {
       ...elements,
       animationsTitles: "[data-animation='title']",
       animationsParagraphs: "[data-animation='paragraph']",
-      animationsLines: "[data-animation='line']"
+      animationsLines: "[data-animation='line']",
+      animationsSliders: "[data-animation='slider']"
     };
 
     this.onMouseWheelEvent = this.onMouseWheel.bind(this);

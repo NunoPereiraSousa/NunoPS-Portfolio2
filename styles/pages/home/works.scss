@@ -18,9 +18,15 @@
 }
 
 .home__works__title {
-  @extend %title-300;
-
+  @extend %title-200;
+  display: inline-block;
   margin-bottom: 26.6rem;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   @include media("<=tablet") {
     margin-bottom: 16rem;
@@ -35,6 +41,12 @@
 }
 
 .home__works__list__item {
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-pampas;
+    color: $color-cod-grey;
+  }
 }
 
 .home__works__list__link {

@@ -2,7 +2,7 @@
 }
 
 .about__awards__title {
-  @extend %title-300;
+  @extend %title-200;
 
   font-weight: 400;
   margin-bottom: 26.6rem;
@@ -28,6 +28,13 @@
   font-weight: bold;
   padding: 4.4rem 8rem;
   position: relative;
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-pampas;
+    color: $color-cod-grey;
+  }
 
   @include media("<=tablet") {
     padding: 3rem 2rem;

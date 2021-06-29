@@ -103,7 +103,7 @@ class App {
    * href: is the link of the next page
    */
   addLinkListeners() {
-    const links = document.querySelectorAll("a");
+    const links = document.querySelectorAll(".navigation__link");
 
     each(links, link => {
       link.onclick = event => {

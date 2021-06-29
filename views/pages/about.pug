@@ -10,9 +10,9 @@ block content
         h1.about__intro__title(data-animation="title")=about.data.header
 
         .about__actions 
-          p.about__label(data-animation="paragraph")=about.data.text
+          p.about__label=about.data.text
           
-          button.home__link(data-animation="paragraph")=about.data.button
+          button.home__link=about.data.button
 
         .about__box__image 
           figure.about__media
@@ -21,34 +21,34 @@ block content
       each section in about.data.body
         if section.slice_type === "location"
           .about__location
-            p.about__location__label(data-animation="paragraph")=section.primary.label_quote
+            p.about__location__label=section.primary.label_quote
 
-            h2.about__location__title(data-animation="title")=section.primary.title
+            h2.about__location__title=section.primary.title
 
-            p.about__location__labels(data-animation="paragraph")=section.primary.label
-            p.about__location__labels(data-animation="paragraph")=section.primary.label_2
-            p.about__location__labels(data-animation="paragraph")=section.primary.label_3
+            p.about__location__labels=section.primary.label
+            p.about__location__labels=section.primary.label_2
+            p.about__location__labels=section.primary.label_3
 
         if section.slice_type === "info"
           .about__info
-            h2.about__info__title(data-animation="title")=section.primary.title
+            h2.about__info__title=section.primary.title
 
-            p.about__info__labels(data-animation="paragraph")=section.primary.label
-            p.about__info__labels(data-animation="paragraph")=section.primary.label_2
-            p.about__info__labels(data-animation="paragraph")=section.primary.label_3
-            p.about__info__labels(data-animation="paragraph")=section.primary.label_4
+            p.about__info__labels=section.primary.label
+            p.about__info__labels=section.primary.label_2
+            p.about__info__labels=section.primary.label_3
+            p.about__info__labels=section.primary.label_4
 
         if section.slice_type === "awards"
           .about__awards
-            h2.about__awards__title(data-animation="title")=section.primary.title
+            h2.about__awards__title=section.primary.title
 
             ul.about__awards__list
               each award in section.items
                 li.about__awards__list__item
                   span.about__awards__stroke(data-animation="line")
                   .about_awards__list__box
-                    p.about__awards__list__column(data-animation="paragraph")=award.date
-                    p.about__awards__list__column(data-animation="paragraph")=award.description
-                    p.about__awards__list__column(data-animation="paragraph")=award.label
+                    p.about__awards__list__column=award.date
+                    p.about__awards__list__column=award.description
+                    p.about__awards__list__column=award.label
 
       include ../partials/footer
