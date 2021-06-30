@@ -7,7 +7,7 @@ block content
   .home
     .home__wrapper
       .home__intro 
-        h1.home__title!=home.data.header.replace(/\n/g, "<br>")
+        h1.home__title(data-animation="title")!=home.data.header.replace(/\n/g, "<br>")
 
         .home__actions 
           p.home__label=home.data.text
@@ -46,16 +46,16 @@ block content
               p.home__works__label=section.primary.label
 
               h2.home__works__title
-                span.spans=section.primary.title
-                span.spans=section.primary.title
-                span.spans=section.primary.title
-                span.spans=section.primary.title
-                span.spans=section.primary.title
+                span.work__spans=section.primary.title
+                span.work__spans=section.primary.title
+                span.work__spans=section.primary.title
+                span.work__spans=section.primary.title
+                span.work__spans=section.primary.title
 
               ul.home__works__list
                 each work in section.items
                   li.home__works__list__item
-                    a.home__works__list__link(href=work.link.url target="_blank")
+                    a.home__works__list__link(href=Link(work.project) target="_blank")
                       span.home__works__link__text=work.label
 
       include ../partials/footer

@@ -2,6 +2,20 @@
   font-size: 2rem;
 }
 
+%title-140 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 14rem;
+
+  // @include media("<=tablet") {
+  //   font-size: 10rem;
+  // }
+
+  // @include media("<phone") {
+  //   font-size: 4rem;
+  // }
+}
+
 %title-200 {
   font-family: $font-bigilla;
   font-weight: bold;

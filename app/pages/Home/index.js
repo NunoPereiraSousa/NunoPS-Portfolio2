@@ -58,7 +58,7 @@ export default class Home extends Page {
   }
 
   worksCarousel() {
-    let spans = document.querySelectorAll(".spans");
+    let spans = document.querySelectorAll(".work__spans");
 
     let containerWidth = document
       .querySelector(".home__works__title")

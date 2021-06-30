@@ -7,7 +7,7 @@ block content
   .about
     .about__wrapper
       .about__box 
-        h1.about__intro__title(data-animation="title")=about.data.header
+        h1.about__intro__title(data-animation="title")!=about.data.header.replace(/\n/g, "<br>")
 
         .about__actions 
           p.about__label=about.data.text

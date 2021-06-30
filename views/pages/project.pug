@@ -1,0 +1,40 @@
+extends ../base.pug
+
+block variables
+  - var template = "project"
+
+block content
+  .project
+    .project__wrapper
+      h1.project__title!=project.data.title.replace(/\n/g, "<br>")
+
+      p.project__label=project.data.label
+
+      .project__presentation
+        .project__presentation__wrapper
+          figure.project__presentation__media
+            img.project__presentation__media__image(alt=project.data.image.alt src=project.data.image.url)
+
+      .project__info 
+        .project__info__box
+          h3.project__info__titles=project.data.category_title
+          h3.project__info__titles=project.data.year_title
+          h3.project__info__titles=project.data.url_title
+
+        .project__info__box
+          p.project__info__label=project.data.category
+          p.project__info__label=project.data.year
+          a.project__info__label(href=project.data.url.url target="_blank")="VISIT PROJECT"
+
+      .project__gallery
+        .project__gallery__wrapper
+          each media in project.data.images
+            figure.project__gallery__media
+              img.project__gallery__media__image(alt=media.image1.alt src=media.image1.url)
+
+      .project__contact
+        h1.project__contact__title=project.data.contact
+
+      
+
+        

@@ -67,7 +67,7 @@ export default class Preloader extends Component {
 
     setTimeout(() => {
       this.onLoaded();
-    }, 5000);
+    }, 2000);
   }
 
   /**
