@@ -74,13 +74,36 @@
 }
 
 .project__gallery__media {
+  height: 117.4rem;
+  margin: 0 8rem 12rem;
+  max-width: 176rem;
+  position: relative;
 }
 
 .project__gallery__media__image {
+  @extend %cover;
+
+  object-fit: cover;
 }
 
 .project__contact {
+  display: flex;
+  justify-content: center;
 }
 
 .project__contact__title {
+  @extend %title-200;
+
+  margin: 25.6rem auto;
+  max-width: 100rem;
+  text-align: center;
+
+  &::after {
+    content: attr(data-text);
+    color: #5d737e;
+    transform: translateX(-100%);
+    position: absolute;
+    font-weight: bold;
+    -webkit-text-stroke: 4px #5d737e;
+  }
 }

@@ -55,7 +55,7 @@ block content
               ul.home__works__list
                 each work in section.items
                   li.home__works__list__item
-                    a.home__works__list__link(href=Link(work.project) target="_blank")
+                    a.home__works__list__link(href=Link(work.project))
                       span.home__works__link__text=work.label
 
       include ../partials/footer

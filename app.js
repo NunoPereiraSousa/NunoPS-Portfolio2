@@ -30,6 +30,8 @@ const initApi = req => {
 };
 
 const handleLinkResolver = doc => {
+  if (doc.type === "project") return `/project/${doc.uid}`;
+
   if (doc.type === "about") return "/about";
 
   return "/";
@@ -89,14 +91,16 @@ app.get("/about", async (req, res) => {
 app.get("/project/:uid", async (req, res) => {
   let uid = req.params.uid;
 
+  console.log(uid);
+
   const api = await initApi(req);
   const defaults = await handleRequest(api);
 
   const project = await api.getByUID("project", uid, {
-    fetchLinks: "project.works.project"
+    fetchLinks: "project.title"
   });
 
-  console.log(project.data);
+  // console.log(project);
 
   res.render("pages/project", {
     project,

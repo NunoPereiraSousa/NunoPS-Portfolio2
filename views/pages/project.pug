@@ -33,7 +33,7 @@ block content
               img.project__gallery__media__image(alt=media.image1.alt src=media.image1.url)
 
       .project__contact
-        h1.project__contact__title=project.data.contact
+        a.project__contact__title(href="mailto:nunopereirasousa00@gmail.com" data-text="TOGETHER")!=project.data.contact.replace(/\n/g, "<br>")
 
       
 
