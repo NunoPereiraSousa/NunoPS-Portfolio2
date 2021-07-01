@@ -7,13 +7,13 @@
   font-weight: bold;
   font-size: 14rem;
 
-  // @include media("<=tablet") {
-  //   font-size: 10rem;
-  // }
+  @include media("<=tablet") {
+    font-size: 12rem;
+  }
 
-  // @include media("<phone") {
-  //   font-size: 4rem;
-  // }
+  @include media("<phone") {
+    font-size: 7rem;
+  }
 }
 
 %title-200 {

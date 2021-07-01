@@ -22,11 +22,23 @@
 %description-20 {
   font-size: 2rem;
   font-weight: lighter;
+
+  @include media("<=tablet") {
+    font-size: 2rem;
+  }
+
+  @include media("<phone") {
+    font-size: 1.4rem;
+  }
 }
 
 %description-24 {
   font-family: $font-bigilla;
   font-size: 2.4rem;
+
+  @include media("<phone") {
+    font-size: 1.5rem;
+  }
 }
 
 %description-40 {
