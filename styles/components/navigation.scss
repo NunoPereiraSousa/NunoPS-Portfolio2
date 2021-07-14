@@ -1,6 +1,7 @@
 .navigation {
   @extend %cover;
 
+  mix-blend-mode: difference;
   pointer-events: none;
   position: fixed;
   z-index: z("navigation");

@@ -160,8 +160,8 @@
   @extend %cover;
 
   object-fit: cover;
-  filter: blur(3px) grayscale(0.2);
-  opacity: 0.5;
+  // filter: blur(3px) grayscale(0.2);
+  // opacity: 0.5;
 }
 
 // .home__works__link__text {

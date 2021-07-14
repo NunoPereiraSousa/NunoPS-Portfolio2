@@ -7,6 +7,7 @@ import Prefix from "prefix";
 import Line from "animations/Line";
 import Title from "animations/Title";
 import Paragraph from "animations/Paragraph";
+import Canvas from "classes/Canvas";
 
 /**
  * this.selector: parent element (.home, .about)
@@ -45,6 +46,11 @@ export default class Page {
       last: 0,
       limit: 0
     };
+
+    new Canvas({
+      domElement: this.selectorChildren.canvas,
+      scroll: this.scroll
+    });
 
     let currentColor = JSON.parse(localStorage.getItem("color"));
 

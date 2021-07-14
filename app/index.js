@@ -66,8 +66,6 @@ class App {
     // get the current page = Class I'm on -> this.pages["about"] or this.pages["home"]
     this.page = this.pages[this.template];
 
-    console.log(this.page);
-
     this.page.create();
 
     this.page.show();
@@ -108,12 +106,10 @@ class App {
    */
   addLinkListeners() {
     const links = document.querySelectorAll("a:not(.footer__link)");
-    console.log(links);
 
     each(links, link => {
       link.onclick = event => {
         event.preventDefault();
-        console.log(event, link);
 
         const { href } = link;
 
@@ -135,8 +131,6 @@ class App {
 
     const request = await window.fetch(url);
 
-    console.log(url);
-
     if (request.status === 200) {
       const html = await request.text();
 
@@ -149,8 +143,6 @@ class App {
 
       // call navigation onChange (check for current template and link)
       this.navigation.onChange(this.template);
-
-      console.log(this.template);
 
       // change the current content
       this.content.innerHTML = divContent.innerHTML;

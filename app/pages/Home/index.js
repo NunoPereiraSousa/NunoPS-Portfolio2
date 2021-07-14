@@ -12,7 +12,8 @@ export default class Home extends Page {
         navigation: document.querySelector(".navigation"),
         title: ".home__title",
         wrapper: ".home__wrapper",
-        button: ".home__link"
+        button: ".home__link",
+        canvas: ".webgl"
       }
     });
   }

@@ -25,14 +25,10 @@ export default class Preloader extends Component {
       append: true
     });
 
-    console.log(this.elements.title);
-
     this.elements.titleSpans =
       this.elements.title.querySelectorAll("span span");
 
     this.length = 0;
-
-    console.log(this.elements.titleSpans);
 
     this.onCounterLoaded();
   }
@@ -67,7 +63,7 @@ export default class Preloader extends Component {
 
     setTimeout(() => {
       this.onLoaded();
-    }, 2000);
+    }, 1); // 2000
   }
 
   /**
@@ -78,45 +74,45 @@ export default class Preloader extends Component {
     return new Promise(resolve => {
       this.animateOut = GSAP.timeline();
 
-      this.animateOut.to(this.elements.titleSpans, {
-        y: "100%",
-        duration: 1,
-        stagger: 0.12,
-        ease: "expo.in"
-      });
+      // this.animateOut.to(this.elements.titleSpans, {
+      //   y: "100%",
+      //   duration: 1,
+      //   stagger: 0.12,
+      //   ease: "expo.in"
+      // });
 
-      each(this.elements.graphics, svg => {
-        this.animateOut.to(
-          svg,
-          {
-            autoAlpha: 0,
-            filter: "blur(10px)",
-            duration: 0.8,
-            stagger: 0.05,
-            ease: "expo.out"
-          },
-          "-=0.75"
-        );
-      });
+      // each(this.elements.graphics, svg => {
+      //   this.animateOut.to(
+      //     svg,
+      //     {
+      //       autoAlpha: 0,
+      //       filter: "blur(10px)",
+      //       duration: 0.8,
+      //       stagger: 0.05,
+      //       ease: "expo.out"
+      //     },
+      //     "-=0.75"
+      //   );
+      // });
 
-      this.animateOut.to(this.elements.label, {
-        autoAlpha: 0,
-        filter: "blur(10px)",
-        duration: 0.8,
-        ease: "expo.out"
-      });
+      // this.animateOut.to(this.elements.label, {
+      //   autoAlpha: 0,
+      //   filter: "blur(10px)",
+      //   duration: 0.8,
+      //   ease: "expo.out"
+      // });
 
-      this.animateOut.to(
-        this.element,
-        {
-          scaleY: 0,
-          transformOrigin: "0% 0%",
-          ease: "expo.out",
-          duration: 1.5,
-          delay: 1
-        },
-        "-=0.9"
-      );
+      // this.animateOut.to(
+      //   this.element,
+      //   {
+      //     scaleY: 0,
+      //     transformOrigin: "0% 0%",
+      //     ease: "expo.out",
+      //     duration: 1.5,
+      //     delay: 1
+      //   },
+      //   "-=0.9"
+      // );
 
       this.animateOut.call(_ => {
         this.emit("completed");

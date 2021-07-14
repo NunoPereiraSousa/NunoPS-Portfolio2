@@ -11,9 +11,6 @@ import GSAP from "gsap";
 export default class Button extends Component {
   constructor({ element }) {
     super({ element });
-    console.log(document.body.style.backgroundColor);
-
-    console.log(this.element);
 
     this.addEventListener();
   }

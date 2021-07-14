@@ -13,6 +13,6 @@ export default class Navigation extends Component {
   }
 
   onChange(template) {
-    console.log(template);
+    // console.log(template);
   }
 }
