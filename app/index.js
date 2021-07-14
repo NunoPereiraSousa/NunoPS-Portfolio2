@@ -1,6 +1,7 @@
 import each from "lodash/each";
 import About from "pages/About";
 import Home from "pages/Home";
+import Project from "pages/Project";
 import Preloader from "components/Preloader";
 import Carousel from "components/Carousel";
 import Navigation from "components/Navigation";
@@ -58,11 +59,14 @@ class App {
   createPages() {
     this.pages = {
       about: new About(),
-      home: new Home()
+      home: new Home(),
+      project: new Project()
     };
 
     // get the current page = Class I'm on -> this.pages["about"] or this.pages["home"]
     this.page = this.pages[this.template];
+
+    console.log(this.page);
 
     this.page.create();
 
@@ -103,11 +107,13 @@ class App {
    * href: is the link of the next page
    */
   addLinkListeners() {
-    const links = document.querySelectorAll(".navigation__link");
+    const links = document.querySelectorAll("a:not(.footer__link)");
+    console.log(links);
 
     each(links, link => {
       link.onclick = event => {
         event.preventDefault();
+        console.log(event, link);
 
         const { href } = link;
 
@@ -129,6 +135,8 @@ class App {
 
     const request = await window.fetch(url);
 
+    console.log(url);
+
     if (request.status === 200) {
       const html = await request.text();
 
@@ -142,9 +150,11 @@ class App {
       // call navigation onChange (check for current template and link)
       this.navigation.onChange(this.template);
 
-      this.content.setAttribute("data-template", this.template);
+      console.log(this.template);
+
       // change the current content
       this.content.innerHTML = divContent.innerHTML;
+      this.content.setAttribute("data-template", this.template);
 
       this.page = this.pages[this.template];
 

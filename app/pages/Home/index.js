@@ -15,8 +15,6 @@ export default class Home extends Page {
         button: ".home__link"
       }
     });
-
-    console.log(this.titles);
   }
 
   create() {

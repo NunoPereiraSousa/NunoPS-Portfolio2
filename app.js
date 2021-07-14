@@ -65,12 +65,6 @@ app.get("/", async (req, res) => {
   const defaults = await handleRequest(api);
   const home = await api.getSingle("home");
 
-  // console.log(home.data.body);
-
-  home.data.body.forEach(el => {
-    console.log(el.items);
-  });
-
   res.render("pages/home", {
     home,
     ...defaults
@@ -91,16 +85,11 @@ app.get("/about", async (req, res) => {
 app.get("/project/:uid", async (req, res) => {
   let uid = req.params.uid;
 
-  console.log(uid);
-
   const api = await initApi(req);
   const defaults = await handleRequest(api);
-
   const project = await api.getByUID("project", uid, {
     fetchLinks: "project.title"
   });
-
-  // console.log(project);
 
   res.render("pages/project", {
     project,
